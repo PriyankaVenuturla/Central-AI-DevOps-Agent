@@ -1,0 +1,30 @@
+# Environment & Credentials (NEVER commit secrets!)
+.env
+*.env.local
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Vector Store persistence directory
+chroma_data/
+
+# Testing & build artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# IDE & Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
