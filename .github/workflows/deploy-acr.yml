@@ -17,8 +17,8 @@ jobs:
         uses: azure/docker-login@v2
         with:
           login-server: aiagenttest.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+          username: aiagenttest
+          password: 94k9ReHsxvpqwtYkFxbio9dyRuN3WX2Qpv070nUOxAsCUTIzk7uVJQQJ99CKACYeBjFEqg7NAAACAZCROyya
 
       - name: Build and tag Docker image
         run: |
