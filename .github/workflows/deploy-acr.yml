@@ -1,0 +1,31 @@
+name: Build and Push Central-Agent to Azure Container Registry
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    name: Build & Push to ACR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Azure Container Registry
+        uses: azure/docker-login@v2
+        with:
+          login-server: aiagenttest.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -t aiagenttest.azurecr.io/central-agent:latest .
+          docker tag aiagenttest.azurecr.io/central-agent:latest aiagenttest.azurecr.io/central-agent:${{ github.sha }}
+
+      - name: Push Docker image to ACR
+        run: |
+          docker push aiagenttest.azurecr.io/central-agent:latest
+          docker push aiagenttest.azurecr.io/central-agent:${{ github.sha }}

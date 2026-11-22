@@ -56,6 +56,8 @@ Central-Agent/
 
 ## 🚀 Quickstart & Setup
 
+python -m venv agent_env (to create venv)
+
 ### 1. Install Dependencies
 ```bash
 pip install -r requirements.txt

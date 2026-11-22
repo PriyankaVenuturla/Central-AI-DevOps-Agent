@@ -1,0 +1,43 @@
+# Version control
+.git/
+.gitignore
+
+# Environment & secrets (never bake secrets into container images!)
+.env
+*.env
+*.env.*
+*.env.local
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Local Vector Store data
+chroma_data/
+
+# Presentation & design files
+*.pptx
+*.ppt
+*.pdf
+
+# Virtual environments
+venv/
+.venv/
+agent_env/
+env/
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
